@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Huntington's Disease</title>
+    <link rel="icon" type="image"
+        href="https://www.alz.org/media/HomeOffice/Inline%20Image/dementia-types-huntingtons-disease-inlineimage.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="title" style="text-align: center;">Huntington's Disease</h1>
+    <input type="radio" name="selector" class="selector" checked="true" value="overview">Overview
+    <input type="radio" name="selector" class="selector" value="InheritancePatternIncidenceRate"> Inheritance Pattern
+    and Incidence Rate
+    <input type="radio" name="selector" class="selector" value="Symptoms">Symptoms
+    <input type="radio" name="selector" class="selector" value="e Treatments ">Treatments 
+    <input type="radio" name="selector" class="selector" value="worksCited">Works Cited
+
+    <h2 style="text-align: center;" id="info"> HD results from a mutation in the HTT gene, which interferes with the
+        body’s ability to produce a protein called huntingtin. This genetic defect causes the building blocks of DNA
+        (cytosine, adenine, and guanine) to repeat excessively more times than normal 12</h2>
+        <img src="" id="img" height="400px">
+
+    <script>
+        const defult = {
+            "title": "Huntington's Disease",
+            "info": "HD results from a mutation in the HTT gene, which interferes with the body’s ability to produce a protein called huntingtin. This genetic defect causes the building blocks of DNA (cytosine, adenine, and guanine) to repeat excessively more times than normal 12"
+             }
+        const InheritancePatternIncidenceRate = {
+            "info": "HD follows an autosomal dominant inheritance pattern. This means that if one parent carries the abnormal gene, each biological child has a 50% chance of inheriting HD. While HD can occur in any ethnic group, it is more commonly seen in those of European descent "
+        }
+        const Symptoms={
+            "info":"<ul><li>Slow or unusual eye movements</li><li>Difficulty organizing, prioritizing or focusing on tasks</li><li>Lack of awareness of one's own behaviors and abilities</li></ul>"
+        }
+        const Treatments={
+            "info":"No treatments can alter the course of Huntington's disease. But medications can lessen some symptoms of movement and psychiatric disorders. And multiple interventions can help a person adapt to changes in abilities for a certain amount of time."
+        } 
+
+        const workSited = {
+            "info": "References<br><br>Huntington's disease - Diagnosis and treatment - Mayo Clinic. (2022, May 17). Top-ranked Hospital in the Nation – Mayo Clinic. https://www.mayoclinic.org/diseases-conditions/huntingtons-disease/diagnosis-treatment/drc-20356122<br><br>Huntington's disease - Symptoms and causes. (2022, May 17). Mayo Clinic. https://www.mayoclinic.org/diseases-conditions/huntingtons-disease/symptoms-causes/syc-20356117<br><br>(n.d.). National Institute of Neurological Disorders and Stroke. https://www.ninds.nih.gov/<br><br>Symptoms of Huntington's disease. (n.d.). https://pbs.twimg.com/media/FTiWUEpWIAAdAnn.jpg"
+        }
+        setInterval(() => {
+            const selected = document.querySelector('input[name="selector"]:checked').value;
+            const title = document.getElementById("title")
+            const info = document.getElementById("info")
+            const image=document.getElementById("img")
+
+            switch (selected) {
+                case "overview":
+                    title.innerHTML = defult.title
+                    document.title = defult.title
+                    info.innerHTML = defult.info
+                    image.src="https://www.alz.org/media/HomeOffice/Inline%20Image/dementia-types-huntingtons-disease-inlineimage.jpg"
+                    break;
+                case "worksCited":
+                    title.innerHTML = defult.title + " Works Cited"
+                    document.title = defult.title + " Works Cited"
+                    info.innerHTML = workSited.info
+                    image.src=""
+                    break;
+                case "InheritancePatternIncidenceRate":
+                    title.innerHTML = defult.title + " Inheritance Pattern and Incidence Rate"
+                    document.title = defult.title + " Inheritance Pattern and Incidence Rate"
+                    info.innerHTML = InheritancePatternIncidenceRate.info
+                    image.src="https://i.pinimg.com/474x/ab/4a/8c/ab4a8c6bcd2f9bd9be1ef6f74a0b2357.jpg"
+                    break;
+                case "Symptoms":
+                    title.innerHTML=defult.title+" Symptoms"
+                    document.title=defult.title+" Symptoms"
+                    info.innerHTML=Symptoms.info
+                    image.src="https://pbs.twimg.com/media/FTiWUEpWIAAdAnn.jpg"
+                    break;
+                case "e Treatments ":
+                    title.innerHTML=defult.title+" Treatments "
+                    document.title= defult.title+" Treatments" 
+                    info.innerHTML=Treatments.info
+                    image.src="https://www.alz.org/media/HomeOffice/Inline%20Image/dementia-types-huntingtons-disease-inlineimage.jpg"
+            }
+        }, 100);
+
+
+
+    </script>
+    <!-- <button onclick="update()" type="button">update page</button> -->
+</body>
+
+</html>
